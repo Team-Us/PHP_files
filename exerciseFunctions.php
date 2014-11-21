@@ -46,7 +46,7 @@
             
                if($userEntry==$dbAnswer)
                {
-                    echo ("<br>Correct! The answer is :".$dbAnswer);
+                    echo ("<br>Correct! The answer is ".$dbAnswer);
                }
                else if($userEntry!=$dbAnswer ) 
                {
