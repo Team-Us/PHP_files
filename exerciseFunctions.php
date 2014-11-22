@@ -63,6 +63,20 @@
               $selected2=mysql_query($query,$dbConnection);
               $rows=mysql_fetch_array($selected2);
               return $rows;
-       }  
+       }
+      //this function gets the filepaths of the images to be used in a drag and drop question
+       function getDragAndDropOptions($eId,$dbConnection)
+       {
+              $query="select * from dragAndDrop where Eid=".$eId;
+              $selected2=mysql_query($query,$dbConnection);
+              $rows=mysql_fetch_array($selected2);
+              return $rows;
+       }
+       //this function is used in drag and drop to make an array of the filepaths of the images involved for comparison
+       function getDaDArray($string)
+       {
+           $array=explode(" ", $string);
+           return $array;
+       }
 
 ?>

@@ -1,0 +1,103 @@
+body
+{
+
+}
+
+.instructions
+{
+	text-align: center;
+}
+
+/**************************
+* .navBox is optional based
+* on if our CSS code for each page
+* has it built in
+**************************/
+.navBox
+{
+	display: inline-block;
+	float: left;
+	margin-top: 20px;
+	width:150px;
+	height:500px;
+	padding:10px;
+	border:1px solid #aaaaaa;
+	text-align: center;
+}
+
+.imageLocation
+{
+	display: inline-block;
+	float: left;
+	margin-top: 20px;
+	margin-left: 90px;
+	list-style-type: none;
+	text-align: center;
+}
+
+.rightBox
+{
+	display: inline-block;
+	float: right;
+	margin-right: 150px;
+	margin-top: 20px;
+
+	width:150px;
+	height:400px;
+	padding:10px;
+	border:1px solid #aaaaaa;
+	text-align: center;
+}
+
+.leftBox
+{
+	display: inline-block;
+	margin-right: 300px;
+	margin-top: 20px;
+	float: right;
+
+	width:150px;
+	height:400px;
+	padding:10px;
+	border:1px solid #aaaaaa;
+	text-align: center;
+}
+
+.submitButton
+{
+	display: inline-block;
+	float: right;
+	position: fixed;
+	margin-left: 650px;
+	margin-top: 500px;
+}
+
+.previousButton
+{
+	display: inline-block;
+	float: right;
+	position: fixed;
+	margin-left: 360px;
+	margin-top: 500px;
+}
+
+.nextButton
+{
+	display: inline-block;
+	float: right;
+	position: fixed;
+	margin-left: 900px;
+	margin-top: 500px;
+}
+
+/************** 
+* Generic layout for titles in the left and right boxes
+* to change names in PHP, use (.leftBox h4) and (.rightBox h4)
+* as the names of each method
+**************/
+h4
+{
+	padding-top: 0px;
+	margin-top: 0px;
+	border-bottom: 1px solid #aaaaaa;
+}
