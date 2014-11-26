@@ -8,11 +8,12 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
+
     </head>
     <body>
         Welcome!<br>
-        <form method="post" action="FillInTheBlank.php">
-            <a href="FillInTheBlank.php"><input type="hidden" name="Eid" value="4"> Fill In The Blank</a>
+        <form name="nav" method="post" action="FillInTheBlank.php">
+            <button type=submit class="link" name="eID" value="4" >Test</button>
             
             
         </form>
