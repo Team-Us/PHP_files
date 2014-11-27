@@ -14,22 +14,12 @@ and open the template in the editor.
         
      <?php
         include 'exerciseFunctions.php';
-        
+      
         $exercise=$_POST["eID"];
-        
         $dbConnected=connectToDatabase();
-        
         $options=  getMultipleChoiceOptions($exercise, $dbConnected); 
-        
         $prompt=getPromptData($exercise,$dbConnected);
         
-        function checkSet($option)
-        {
-            if(isset($_POST['userEntry']) && $_POST['userEntry']==$option)
-            {
-                echo ' checked="true"';
-            }
-        }
         ?>
         <!-- form is created, and dynamically populated with the data retrieved from the database, and it posts to this same page-->
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">

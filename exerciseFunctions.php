@@ -46,7 +46,7 @@
             
                if($userEntry==$dbAnswer)
                {
-                    echo ("<br>Correct! The answer is ".$dbAnswer);
+                    echo ("<br>Correct! The answer is ".$dbAnswer.".");
                }
                else if($userEntry!=$dbAnswer ) 
                {
@@ -78,5 +78,13 @@
            $array=explode(" ", $string);
            return $array;
        }
+       //this function is used in the MultipleChoice.php to see if a specific choice has been made when the submit button is clicked. It will then echo the checked="true" attribute of a radio button.
+       function checkSet($option)
+        {
+            if(isset($_POST['userEntry']) && $_POST['userEntry']==$option)
+            {
+                echo ' checked="true"';
+            }
+        }
 
 ?>

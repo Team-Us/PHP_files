@@ -35,7 +35,7 @@ body
 	text-align: center;
 }
 
-.rightBox
+.rightBox1Title
 {
 	display: inline-block;
 	float: right;
@@ -43,13 +43,51 @@ body
 	margin-top: 20px;
 
 	width:150px;
-	height:400px;
+	height:100px;
 	padding:10px;
 	border:1px solid #aaaaaa;
 	text-align: center;
 }
+.rightBox1
+{
+	display: inline-block;
+	float: right;
+	margin-right: 150px;
+	margin-top: 20px;
 
-.leftBox
+	width:150px;
+	height:200px;
+	padding:10px;
+	border:1px solid #aaaaaa;
+	text-align: center;
+}
+.rightBox2
+{
+	display: inline-block;
+	float: right;
+	margin-right: 150px;
+	margin-top: 20px;
+
+	width:150px;
+	height:100px;
+	padding:10px;
+	border:1px solid #aaaaaa;
+	text-align: center;
+}
+.rightBox3
+{
+	display: inline-block;
+	float: right;
+	margin-right: 150px;
+	margin-top: 20px;
+
+	width:150px;
+	height:100px;
+	padding:10px;
+	border:1px solid #aaaaaa;
+	text-align: center;
+}
+.leftBox1
 {
 	display: inline-block;
 	margin-right: 300px;
@@ -57,7 +95,7 @@ body
 	float: right;
 
 	width:150px;
-	height:400px;
+	height:200px;
 	padding:10px;
 	border:1px solid #aaaaaa;
 	text-align: center;
@@ -100,4 +138,14 @@ h4
 	padding-top: 0px;
 	margin-top: 0px;
 	border-bottom: 1px solid #aaaaaa;
+}
+
+button.link
+{
+    background:none!important;
+     border:none; 
+     padding:0!important;
+    /*border is optional*/
+     border-bottom:1px solid #444; 
+     cursor: pointer;
 }

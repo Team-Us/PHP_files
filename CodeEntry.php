@@ -12,10 +12,6 @@ and open the template in the editor.
     <body>
         <?php
         include 'exerciseFunctions.php';
-        //Fields for testing only, the links to exercises need to be in a form, which posts the eID, to be called.
-        //There may also need to be a php page that checks the topic of a given exercise, which then posts the eID
-        //to the proper page.
-        $_POST["eID"]=5;
         $exercise=$_POST["eID"];
         $prompt_data=getPromptData($exercise);
         ?>
@@ -26,8 +22,10 @@ and open the template in the editor.
         The following input text field's value is dynamically set via PHP if an answer has already been submitted.
         -->
         <input type = "text" size = "50" name="userEntry" <?php if (isset($_POST['userEntry'])){echo('value="'.$_POST['userEntry'].'"');};?>  >
+        <input type="hidden" name="eID" value="<?php echo $exercise?>">
         <br>
         <input type="submit" name="submit" value="Submit" >
+        
         </form>
         
        <?php checkResponse($prompt_data["Answer"], $_POST['userEntry'])  ?> 
