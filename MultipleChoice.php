@@ -16,10 +16,12 @@ and open the template in the editor.
         include 'exerciseFunctions.php';
       
         $exercise=$_POST["eID"];
+        
         $dbConnected=connectToDatabase();
         $options=  getMultipleChoiceOptions($exercise, $dbConnected); 
         $prompt=getPromptData($exercise,$dbConnected);
-        
+        //$previous=getPrevious($exercise,$prompt['Topic']);
+        $next=  getNext($exercise, $prompt['Topic']);
         ?>
         <!-- form is created, and dynamically populated with the data retrieved from the database, and it posts to this same page-->
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -32,15 +34,15 @@ and open the template in the editor.
             <input type="radio" name="userEntry"  value="c" <?php checkSet("c")?>>c. <?php echo ($options['OptionC'])?><br>
             <input type="radio" name="userEntry"  value="d" <?php checkSet("d")?>>d. <?php echo ($options['OptionD'])?><br>
             <input type="hidden" name="eID" value="<?php echo $exercise?>">
-            
             <input type="submit" name="submit" value="Submit" >
         </form>
        
       <?php
             checkResponse($prompt['Answer'],$_POST['userEntry'] );
             
-       ?><!-- end php post entry-->
+            
+       ?>
         
-        
+       
     </body>
 </html>
