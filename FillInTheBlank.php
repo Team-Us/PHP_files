@@ -17,13 +17,16 @@ and open the template in the editor.
         //There may also need to be a php page that checks the topic of a given exercise, which then posts the eID
         //to the proper page.
         $exercise=$_POST["eID"]+0;
-        $prompt_data=getPromptData($exercise);
-        
+        $prompt=getPromptData($exercise);
+        $next=$prompt['NextPrompt'];
+        $nextPage=getPageInfo($next);
+        $previous=$prompt['PreviousPrompt'];
+        $previousPage=getPageInfo($previous); 
         
         ?>
         Fill In The Blank:
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        <?php echo("".$prompt_data["Prompt"]."<br>Answer:");?>
+        <?php echo("".$prompt["Prompt"]."<br>Answer:");?>
         <!--
         The following input text field's value is dynamically set via PHP if an answer has already been submitted.
         -->
@@ -33,6 +36,12 @@ and open the template in the editor.
         <input type="submit" name="submit" value="Submit" >
         </form>
         
-       <?php checkResponse($prompt_data["Answer"], $_POST['userEntry'])  ?> 
+       <?php checkResponse($prompt["Answer"], $_POST['userEntry'])  ?> 
+        <form method="post" action="<?php echo $previousPage ?>">
+                <button type=submit  name="eID" value="<?php echo $previous?>" >Previous</button>
+        </form>
+         <form method="post" action="<?php echo $nextPage ?>">
+                <button type=submit  name="eID" value="<?php echo $next?>" >Next</button>
+         </form>
     </body>
 </html>

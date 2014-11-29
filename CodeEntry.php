@@ -13,11 +13,15 @@ and open the template in the editor.
         <?php
         include 'exerciseFunctions.php';
         $exercise=$_POST["eID"];
-        $prompt_data=getPromptData($exercise);
+        $prompt=getPromptData($exercise);
+        $next=$prompt['NextPrompt'];
+        $nextPage=getPageInfo($next);
+        $previous=$prompt['PreviousPrompt'];
+        $previousPage=getPageInfo($previous); 
         ?>
         Code Entry:
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        <?php echo("".$prompt_data["Prompt"]."<br>Answer:");?>
+        <?php echo("".$prompt["Prompt"]."<br>Answer:");?>
         <!--
         The following input text field's value is dynamically set via PHP if an answer has already been submitted.
         -->
@@ -27,7 +31,14 @@ and open the template in the editor.
         <input type="submit" name="submit" value="Submit" >
         
         </form>
-        
+            <form method="post" action="<?php echo $previousPage ?>">
+                <button type=submit  name="eID" value="<?php echo $previous?>" >Previous</button>
+            </form>
+            <br>
+            <br>
+            <form method="post" action="<?php echo $nextPage ?>">
+                <button type=submit  name="eID" value="<?php echo $next?>" >Next</button>
+            </form>
        <?php checkResponse($prompt_data["Answer"], $_POST['userEntry'])  ?> 
     </body>
 </html>

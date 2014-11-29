@@ -87,61 +87,13 @@
             }
         }
         
-        function getPrevious($current,$topic)
-        {
-            $next=0;
-            $dbConnected=connectToDatabase();
-            $query="select ExerciseId from Exercises where Topic=".$topic;
-            $selected=  mysql_query($query,$dbConnected);
-            $array=  mysql_fetch_array($selected);
-            reset($array);
-            if($current==current($array))
-            {
-                
-                $previous=end($array);
-            }
-            if($current!==current($array))
-            {
-                
-                while(current($array)!==$current)
-                {
-                    previous($array);
-                }
-                $previous=previous($array);
-            }
-            mysql_close($dbConnected);
-            return $previous;
-        }
+       
 
-        function getNext($current,$topic)
-        {
-            $next=0;
-            $dbConnected=connectToDatabase();
-            $query="select ExerciseId from Exercises where Topic=".$topic;
-            $selected=  mysql_query($query,$dbConnected);
-            $array=  mysql_fetch_array($selected);
-            if($current==count($array))
-            {
-                reset($array);
-                $next=current($array);
-            }
-            if($current!==count($array))
-            {
-                
-                while(current($array)!==$current)
-                {
-                    next($array);
-                }
-                $next=next($array);
-            }
-            mysql_close($dbConnected);
-            return $next;
-        }
-        /*
+    
         function getPageInfo($eID)
         {
-            $data=getPromptData($eID)['PromptType'];
-            $type=data['PromptType'];
+            $data=getPromptData($eID);
+            $type=$data['PromptType'];
             $returned="";
             switch($type){
                 case "MultipleChoice":
@@ -159,6 +111,6 @@
             }
             return $returned;
         }
-*/
+
          
 ?>

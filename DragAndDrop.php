@@ -21,6 +21,10 @@ and open the template in the editor.
                     $rightDiv=getDaDArray($images['right']);
                     //exercise data
                     $prompt=getPromptData($exercise,$dbConnected);
+                    $next=$prompt['NextPrompt'];
+                    $nextPage=getPageInfo($next);
+                    $previous=$prompt['PreviousPrompt'];
+                    $previousPage=getPageInfo($previous); 
                 ?>
                 <script>
 			// array of object dropped in the leftDiv
@@ -186,8 +190,15 @@ and open the template in the editor.
 		               
                 <input type="button" value="Submit" class="submitButton"  onClick="checkAnswer()"/>
 		
-		<input type="button" value="Previous Session" class="previousButton" />
+            <form method="post" action="<?php echo $previousPage ?>">
+                <button type=submit  name="eID" value="<?php echo $previous?>" >Previous</button>
+            </form>
 		
-		<input type="button" value="Next Session" class="nextButton" />
+            
+            <br>
+            <br>
+            <form method="post" action="<?php echo $nextPage ?>">
+                <button type=submit  name="eID" value="<?php echo $next?>" >Next</button>
+            </form>
 	</body>
 </html>
