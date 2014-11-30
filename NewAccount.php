@@ -51,7 +51,7 @@ and open the template in the editor.
 </script>
 <div id="Header"> put in Team US logo info here </div>
 <div class="createAccount">
-  <form name="NewAccount" id="NewAccount" action="CreateAccount1.php" method="POST" enctype="application/x-www-form-urlencoded">
+  <form name="NewAccount" id="NewAccount" action="CreateAccount.php" method="POST" enctype="application/x-www-form-urlencoded">
     <table border="0" cellspacing="3" cellpadding="5">
       <tbody>
         <tr>

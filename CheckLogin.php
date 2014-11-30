@@ -21,7 +21,7 @@
 
         if (mysql_num_rows($DBResult) == 1){
             //if matches continue
-            header("Location: http://ec2-54-148-50-198.us-west-2.compute.amazonaws.com/index.php");   //this needs modified to where it should go next.  The main page
+            header("Location: index.php");   //this needs modified to where it should go next.  The main page
  
         }else{
             //if not match send back to login.php

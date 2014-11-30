@@ -20,10 +20,10 @@
             $DBResult = mysql_query($DBQuery,$dbConnection);
             if ($DBResult){
                 //added new record to database
-                echo "useradded";
+                header("Location: index.php");
             }else{
                 //failed to add to database
-				echo "problem updating notoify someone";
+				echo "There was a problem updating the Database notify someone, please.  I really need some help here.";
             }
             
 

@@ -50,8 +50,14 @@
                }
                else if($userEntry!=$dbAnswer ) 
                {
-                    echo("<br> Wrong, ".$_POST['userEntry']." is incorrect!");
+                   $_POST['count']+=1; 
+                   echo("<br> Wrong, ".$_POST['userEntry']." is incorrect!");
                }
+               else if($_POST['count']>3)
+               {
+                   $_POST=0;
+                   echo("Tough luck champ. Retry this exercise after studying a little bit more about it, or ask for help.");
+               }    
            }
        }
        

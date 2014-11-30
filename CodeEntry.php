@@ -18,6 +18,12 @@ and open the template in the editor.
         $nextPage=getPageInfo($next);
         $previous=$prompt['PreviousPrompt'];
         $previousPage=getPageInfo($previous); 
+        if(!isset($_POST['count']))
+        {
+            $_POST['count']=0;
+        }
+        
+        
         ?>
         Code Entry:
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -39,6 +45,8 @@ and open the template in the editor.
             <form method="post" action="<?php echo $nextPage ?>">
                 <button type=submit  name="eID" value="<?php echo $next?>" >Next</button>
             </form>
-       <?php checkResponse($prompt_data["Answer"], $_POST['userEntry'])  ?> 
+       <?php checkResponse($prompt_data["Answer"], $_POST['userEntry'])  
+               
+               ?> 
     </body>
 </html>
