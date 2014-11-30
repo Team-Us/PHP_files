@@ -127,11 +127,11 @@ and open the template in the editor.
                 
                 <!-- Title with Instructions -->
 		<div class="instructions">
-			<h1>
-                            <?php echo("".$prompt['Topic'])?> Drag And Drop
-			</h1>
-		
 			<h3>
+                            <?php echo("".$prompt['Topic'])?> Drag And Drop
+			
+		
+			
                             <?php echo("".$prompt['Prompt']);?>
 			</h3>
 		</div>
@@ -189,7 +189,7 @@ and open the template in the editor.
 		
             
             <form method="post" action="<?php echo $previousPage ?>">
-                <button type=submit  name="eID" value="<?php echo $previous?>" >Previous</button>
+                <button type="submit"  name="eID" value="<?php echo $previous?>" >Previous</button>
             </form>
             
             <br>
@@ -199,7 +199,7 @@ and open the template in the editor.
             <br>
             <br>
             <form method="post" action="<?php echo $nextPage ?>">
-                <button type=submit  name="eID" value="<?php echo $next?>" >Next</button>
+                <button type="submit"  name="eID" value="<?php echo $next?>" >Next</button>
             </form>
 	</body>
 </html>

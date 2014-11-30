@@ -10,17 +10,17 @@
             }
             else
             {
-                echo "<!--You have Connected to the DB Server.-->";
+                echo "<!--Connected to DB Server.-->";
                 
             }
              $db_selected= mysql_select_db('CSIS2450',$dbConnection);
             if(!$db_selected)
             {
-                die('<!--Can\'t use CSIS2450 at :'.mysql_error().'-->');
+                die('<!--Can\'t use the db at :'.mysql_error().'-->');
             }
             else
             {
-                echo "<br><!-- You connected to the CSIS2450-->";
+                echo "<!-- You connected to the db-->";
                 return $dbConnection;
             }
        }   
@@ -50,7 +50,7 @@
                }
                else if($userEntry!=$dbAnswer ) 
                {
-                   $_POST['count']+=1; 
+                   $_POST['count']++; 
                    echo("<br> Wrong, ".$_POST['userEntry']." is incorrect!");
                }
                else if($_POST['count']>3)

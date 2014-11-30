@@ -8,7 +8,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <link rel="stylesheet" href="./preston.css"/>
+        <link rel="stylesheet" href="./4691.css"/>
     </head>
     <body>
         
@@ -24,20 +24,76 @@ and open the template in the editor.
         $previousPage=getPageInfo($previous); 
         ?>
         <!-- form is created, and dynamically populated with the data retrieved from the database, and it posts to this same page-->
+
+            
+            
         <div id="wrapper">
-            <div id="leftcolumn">
-                
-                    <form  method="post" action="FillInTheBlank.php">
-                        <button type=submit class="link" name="eID" value="4" >Int</button>    
-                    </form>
-                    <form method="post" action="MultipleChoice.php">
-                        <button type=submit class="link" name="eID" value="1" >Variable Declarations</button>    
-                    </form>
-                    
-                
-            </div>
-            
-            
+        <div id="navigationwrap">
+        <div id="navigation">
+            <p>This should show login info, name, etc.</p>
+        </div>
+        </div>
+        <div id="leftcolumnwrap">
+        <div id="leftcolumn">
+            <p>Topics:  
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="1" >Ints and Strings</button>    
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="9" >Variable Declarations</button>    
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="17" >Scanner</button>    
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="23" >Selection Statements</button>    
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="28" >Enums</button>    
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="35" >ArrayList&lt;E&gt;</button>    
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="41" >Class Arrays</button>    
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="49" >Passing Arrays as Arguments</button>    
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="53" >For Loop</button>
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="60" >Char</button>    
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="67" >While Loop(Sentinel Controlled)</button>    
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="72" >Logical Operators </button>   
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="87" >Compound Operators</button>    
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="97" >Promotion and Casting</button>    
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="105" >Double and Float</button>    
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="9" >Constructors</button>    
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="120" >Fields</button>    
+        </form>
+        <form  method="post" action="MultipleChoice.php">
+            <button type=submit class="link" name="eID" value="126" >Class Decs, Instances, Access Members</button>    
+        </form>
+        </p>
+        </div>
+        </div>
+        <div id="contentwrap">
         <div id="content">
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             Multiple Choice:
@@ -49,24 +105,43 @@ and open the template in the editor.
             <input type="radio" name="userEntry"  value="c" <?php checkSet("c")?>>c. <?php echo ($options['OptionC'])?><br>
             <input type="radio" name="userEntry"  value="d" <?php checkSet("d")?>>d. <?php echo ($options['OptionD'])?><br>
             <input type="hidden" name="eID" value="<?php echo $exercise?>">
-            
-            <input type="submit" name="submit" value="Submit" >
-        </form>
-          
-            <form method="post" action="<?php echo $previousPage ?>">
-                <button type=submit  name="eID" value="<?php echo $previous?>" >Previous</button>
-            </form>
-            <br>
-            <br>
-            <form method="post" action="<?php echo $nextPage ?>">
-                <button type=submit  name="eID" value="<?php echo $next?>" >Next</button>
-            </form>
-      <?php
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form><div>
+       <?php
+            if(!isset($_POST['userEntry']))
+            {
+                echo "<br><br>";
+            }
             checkResponse($prompt['Answer'],$_POST['userEntry'] );
             mysqli_close($dbConnected);
-      ?>
+      ?> 
+        </div>
+            <form  method="post" action="<?php echo $previousPage ?>">
+                <div>
+                <button type="submit"  name="eID" value="<?php echo $previous?>" >Previous</button>
+                </div>
+            </form>
+            
+            <form  method="post" action="<?php echo $nextPage ?>">
+                <div>
+                <button type="submit"  name="eID" value="<?php echo $next?>" >Next</button>
+                </div>
+            </form>
+
+           
+           </div>
+        </div>
+        <div id="footerwrap">
+        <div id="footer">
+            <p> put links to TOS and about page here</p>
+        </div>
+        </div>
+    </div>
+ 
             
        </div>
-       </div>     
+         
     </body>
 </html>
