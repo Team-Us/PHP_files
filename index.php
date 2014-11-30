@@ -12,24 +12,15 @@ and open the template in the editor.
 
     </head>
     <body>
-        Welcome!<br>
+        
         <form  method="post" action="FillInTheBlank.php">
-            <button type=submit class="link" name="eID" value="4" >Fill In The Blank</button>    
+            <button type=submit class="link" name="eID" value="9" >Variable Declarations</button>    
         </form>
-        <br>
+        
         <form name="nav" method="post" action="MultipleChoice.php">
-            <button type=submit class="link" name="eID" value="1" >Multiple Choice</button>    
+            <button type=submit class="link" name="eID" value="1" >Ints And Strings</button>    
         </form>
         <br>
-        <br>
-        <form method="post" action="CodeEntry.php">
-            <button type=submit class="link" name="eID" value="5" >Code Entry</button>    
-        </form>
-        <br>
-        <br>
-        <form method="post" action="DragAndDrop.php">
-            <button type=submit class="link" name="eID" value="8" >Drag And Drop</button>    
-        </form>
         <br>
     </body>
 </html>

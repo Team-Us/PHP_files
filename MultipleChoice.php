@@ -8,7 +8,6 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
-        
         <link rel="stylesheet" href="./preston.css"/>
     </head>
     <body>
@@ -25,6 +24,20 @@ and open the template in the editor.
         $previousPage=getPageInfo($previous); 
         ?>
         <!-- form is created, and dynamically populated with the data retrieved from the database, and it posts to this same page-->
+        <div id="wrapper">
+            <div id="leftcolumn">
+                
+                    <form  method="post" action="FillInTheBlank.php">
+                        <button type=submit class="link" name="eID" value="4" >Int</button>    
+                    </form>
+                    <form method="post" action="MultipleChoice.php">
+                        <button type=submit class="link" name="eID" value="1" >Variable Declarations</button>    
+                    </form>
+                    
+                
+            </div>
+            
+            
         <div id="content">
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             Multiple Choice:
@@ -51,9 +64,9 @@ and open the template in the editor.
       <?php
             checkResponse($prompt['Answer'],$_POST['userEntry'] );
             mysqli_close($dbConnected);
-            
-       ?>
+      ?>
             
        </div>
+       </div>     
     </body>
 </html>

@@ -114,9 +114,9 @@ and open the template in the editor.
                                    rcount++;
                                
                            }
-                            if(lcount>0||rcount>0)
+                           if(lcount>0||rcount>0)
                            { alert("Wrong");}
-                           else(lcount===0&&rcount===0)
+                           else if(lcount===0&&rcount===0)
                            {alert("correct");}
                          }//end checkAnswer()
 		</script>
@@ -187,13 +187,14 @@ and open the template in the editor.
 			</h4>
 		</div>
 		
-		               
-                <input type="button" value="Submit" class="submitButton"  onClick="checkAnswer()"/>
-		
+            
             <form method="post" action="<?php echo $previousPage ?>">
                 <button type=submit  name="eID" value="<?php echo $previous?>" >Previous</button>
             </form>
-		
+            
+            <br>
+                    <input  type="button" value="Submit"  onClick="checkAnswer()"/>
+            <br>
             
             <br>
             <br>

@@ -70,7 +70,7 @@ p
 }
 
 #leftcolumn {
-    background: #a1ffff;
+    background: white;
     border-radius: 10px;
     border: 1px solid #8debeb;
     margin: 5px;
@@ -85,7 +85,7 @@ p
 
 #footer {
     height: 40px;
-    background: #fff5d5;
+    background: white;
     border-radius: 10px;
     border: 1px solid #ebe1c1;
     margin: 5px;
