@@ -91,40 +91,45 @@ and open the template in the editor.
             <button type=submit class="link" name="eID" value="120" >Fields</button>    
         </form>
         <form  method="post" action="MultipleChoice.php">
-            <button type=submit class="link" name="eID" value="126" >Class Decs, Instances, Access Members</button>    
+            <button type=submit class="link" name="eID" value="126" >Class Decs,Instances,Access Members</button>    
         </form>
         </p>
+        
         </div>
         </div>
         <div id="contentwrap">
         <div id="content">
            <p>
-               Code Entry:
+               <?php echo $prompt['Topic']?> Code Entry:
                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                <?php echo("".$prompt["Prompt"]."<br>Answer:");?>
-               <input type = "text" size = "50" name="userEntry" <?php if (isset($_POST['userEntry'])){echo('value="'.$_POST['userEntry'].'"');};?>  >
-               <input type="hidden" name="eID" value="<?php echo $exercise?>">
-               <br>
-                <input type="submit" name="submit" value="Submit" >
+                    &emsp;<?php echo($prompt["Prompt"]."<br>&emsp;Answer:");?>
+                    <input type = "text" size = "50" name="userEntry" <?php if (isset($_POST['userEntry'])){echo('value="'.$_POST['userEntry'].'"');};?>  >
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;
+                    Omit extra spaces and white spaces.
+                    <input type="hidden" name="eID" value="<?php echo $exercise?>">
+                    
+                    <br>
+                    <input type="submit" name="submit" value="Submit" >
         
-                </form>
-                                <?
-                if(!isset($_POST['userEntry']))
-                {   
-                    echo "<br><br>";
-                }
-                php checkResponse($prompt_data["Answer"], $_POST['userEntry'])?> 
+               </form>
+               <?php
+                    if(!isset($_POST['userEntry']))
+                    {   
+                        echo "<br><br>";
+                    }
+                    checkResponse(($prompt['Answer']), htmlspecialchars($_POST['userEntry']));                    
+                ?> 
                 
-                <form method="post" action="<?php echo $previousPage ?>">
+               <form method="post" action="<?php echo $previousPage ?>">
                     <button type=submit  name="eID" value="<?php echo $previous?>" >Previous</button>
-                </form>
-                <br>
-                <br>
-                <form method="post" action="<?php echo $nextPage ?>">
+               </form>
+               <br>
+               <br>
+               <form method="post" action="<?php echo $nextPage ?>">
                     <button type=submit  name="eID" value="<?php echo $next?>" >Next</button>
-                </form>
+               </form>
 
-            </p>
+            
         </div>
         </div>
         <div id="footerwrap">

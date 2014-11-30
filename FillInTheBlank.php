@@ -33,7 +33,7 @@ and open the template in the editor.
         </div>
         <div id="leftcolumnwrap">
         <div id="leftcolumn">
-            <p>Topics
+                      <p>Topics: 
         <form  method="post" action="MultipleChoice.php">
             <button type=submit class="link" name="eID" value="1" >Ints and Strings</button>    
         </form>
@@ -86,13 +86,13 @@ and open the template in the editor.
             <button type=submit class="link" name="eID" value="120" >Fields</button>    
         </form>
         <form  method="post" action="MultipleChoice.php">
-            <button type=submit class="link" name="eID" value="126" >Class Decs, Instances, Access Members</button>    
-        </form></p></p>
+            <button type=submit class="link" name="eID" value="126" >Class Decs,Instances,Member Access</button>    
+        </form></p>
         </div>
         </div>
         <div id="contentwrap">
         <div id="content">
-           <p>        Fill In The Blank:
+        &emsp;<?php echo $prompt['Topic']?> Fill In The Blank:
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <?php echo("".$prompt["Prompt"]."<br>Answer:");?>
         <!--
@@ -117,7 +117,7 @@ and open the template in the editor.
          <form method="post" action="<?php echo $nextPage ?>">
                 <button type=submit  name="eID" value="<?php echo $next?>" >Next</button>
          </form>
-        </p>
+        
         </div>
         </div>
         <div id="footerwrap">

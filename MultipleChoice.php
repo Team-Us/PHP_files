@@ -35,7 +35,7 @@ and open the template in the editor.
         </div>
         <div id="leftcolumnwrap">
         <div id="leftcolumn">
-            <p>Topics:  
+              <p>Topics: 
         <form  method="post" action="MultipleChoice.php">
             <button type=submit class="link" name="eID" value="1" >Ints and Strings</button>    
         </form>
@@ -88,15 +88,17 @@ and open the template in the editor.
             <button type=submit class="link" name="eID" value="120" >Fields</button>    
         </form>
         <form  method="post" action="MultipleChoice.php">
-            <button type=submit class="link" name="eID" value="126" >Class Decs, Instances, Access Members</button>    
-        </form>
-        </p>
+            <button type=submit class="link" name="eID" value="126" >Class Decs,Instances,Member Access</button>    
+        </form></p>
         </div>
         </div>
         <div id="contentwrap">
         <div id="content">
+            <div class="table">
+                <div class="row">
+                    <div class="promptCell">
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            Multiple Choice:
+            <?php echo $prompt['Topic']?> Multiple Choice:<br>
             <br>
             <?php echo($prompt["Prompt"]);?>
             <br>
@@ -105,10 +107,17 @@ and open the template in the editor.
             <input type="radio" name="userEntry"  value="c" <?php checkSet("c")?>>c. <?php echo ($options['OptionC'])?><br>
             <input type="radio" name="userEntry"  value="d" <?php checkSet("d")?>>d. <?php echo ($options['OptionD'])?><br>
             <input type="hidden" name="eID" value="<?php echo $exercise?>">
-            <div>
-                <button type="submit">Submit</button>
             </div>
-        </form><div>
+            </div>
+                
+            <div class="row">
+                <div class="cell">
+                    <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+                
+            
        <?php
             if(!isset($_POST['userEntry']))
             {
@@ -117,21 +126,22 @@ and open the template in the editor.
             checkResponse($prompt['Answer'],$_POST['userEntry'] );
             mysqli_close($dbConnected);
       ?> 
-        </div>
-            <form  method="post" action="<?php echo $previousPage ?>">
-                <div>
+            <div class="row">
+                <div class="buttonCell">
+                <form  method="post" action="<?php echo $previousPage ?>">
                 <button type="submit"  name="eID" value="<?php echo $previous?>" >Previous</button>
+                </form>
                 </div>
-            </form>
             
-            <form  method="post" action="<?php echo $nextPage ?>">
-                <div>
-                <button type="submit"  name="eID" value="<?php echo $next?>" >Next</button>
+                <div class="buttonCell">
+                <form  method="post" action="<?php echo $nextPage ?>">
+                    <button class="buttonNext" type="submit"  name="eID" value="<?php echo $next?>" >Next</button>
+                </form>
                 </div>
-            </form>
-
-           
+            
            </div>
+        </div>
+        </div>
         </div>
         <div id="footerwrap">
         <div id="footer">
@@ -141,7 +151,7 @@ and open the template in the editor.
     </div>
  
             
-       </div>
+    
          
     </body>
 </html>

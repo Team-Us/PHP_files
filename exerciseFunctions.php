@@ -43,21 +43,15 @@
        {
            if(isset($_POST['userEntry']))
            {
-            
-               if($userEntry==$dbAnswer)
+               $result=  strcmp($dbAnswer, $userEntry);
+               if($result===0)
                {
-                    echo ("<br>Correct! The answer is ".$dbAnswer.".");
+                    echo ("<br>Correct! The answer is ".$dbAnswer);
                }
-               else if($userEntry!=$dbAnswer ) 
+               else if($result!==0) 
                {
-                   $_POST['count']++; 
-                   echo("<br> Wrong, ".$_POST['userEntry']." is incorrect!");
+                    echo("<br> Wrong, ".$_POST['userEntry']." is incorrect!");
                }
-               else if($_POST['count']>3)
-               {
-                   $_POST=0;
-                   echo("Tough luck champ. Retry this exercise after studying a little bit more about it, or ask for help.");
-               }    
            }
        }
        
@@ -92,10 +86,7 @@
                 echo ' checked="true"';
             }
         }
-        
-       
-
-    
+            
         function getPageInfo($eID)
         {
             $data=getPromptData($eID);
@@ -117,6 +108,4 @@
             }
             return $returned;
         }
-
-         
 ?>
