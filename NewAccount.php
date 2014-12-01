@@ -7,6 +7,7 @@ and open the template in the editor.
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="./4691.css"/>
 <title>Create New Account</title>
 <script src="SpryAssets/SpryValidationPassword.js" type="text/javascript"></script>
 <script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
@@ -49,7 +50,77 @@ and open the template in the editor.
 	  }
 
 </script>
-<div id="Header"> put in Team US logo info here </div>
+<div id="wrapper">
+  <div id="navigationwrap">
+    <div id="navigation">
+    <div id="navigation">
+      <?php include "Header.php" ?>
+    </div>
+    </div>
+  </div>
+  <div id="leftcolumnwrap">
+    <div id="leftcolumn">
+      <p>Topics:
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="1" >Ints and Strings</button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="9" >Variable Declarations</button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="17" >Scanner</button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="23" >Selection Statements</button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="28" >Enums</button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="35" >ArrayList&lt;E&gt;</button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="41" >Class Arrays</button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="49" >Passing Arrays as Arguments</button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="53" >For Loop</button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="60" >Char</button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="67" >While Loop(Sentinel Controlled)</button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="72" >Logical Operators </button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="87" >Compound Operators</button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="97" >Promotion and Casting</button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="105" >Double and Float</button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="9" >Constructors</button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="120" >Fields</button>
+      </form>
+      <form  method="post" action="MultipleChoice.php">
+        <button type=submit class="link" name="eID" value="126" >Class Decs,Instances,Member Access</button>
+      </form>
+      </p>
+    </div>
+  </div>
+  <div id="contentwrap">
+    <div id="content">
+    <br><br>
 <div class="createAccount">
   <form name="NewAccount" id="NewAccount" action="CreateAccount.php" method="POST" enctype="application/x-www-form-urlencoded">
     <table border="0" cellspacing="3" cellpadding="5">
@@ -104,7 +175,7 @@ and open the template in the editor.
         </tr>
         <tr>
           <td colspan="2"><input type="checkbox" name="AgreeTermsSerivce" value="ON" />
-            I agree to the <a href="TermsService.html" target="_blank">Terms of Service</a></td>
+            I agree to the <a href="TermsService.php" target="_blank">Terms of Service</a></td>
         </tr>
         <tr>
           <td colspan="2"><input type="submit" value="Create Account" name="Create Account" onClick="return CheckRequireds();"/></td>
@@ -113,6 +184,13 @@ and open the template in the editor.
     </table>
   </form>
 </div>
+
+
+    </div>
+  </div>
+
+
+
 <?php
         // put your code here
         ?>
@@ -122,5 +200,15 @@ var sprytextfield1 = new Spry.Widget.ValidationTextField("EmailCheck", "email");
 var sprytextfield2 = new Spry.Widget.ValidationTextField("UserName", "custom");
 var sprypassword2 = new Spry.Widget.ValidationPassword("password1", {minChars:8, maxChars:45, minAlphaChars:1, minNumbers:1, minUpperAlphaChars:1});
     </script>
+  <div id="footerwrap">
+    <div id="footer">
+      <?php
+            include "footer.php";
+          ?>
+    </div>
+  </div>
+</div>
+<br>
+<br>
 </body>
 </html>

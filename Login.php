@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<!--
-Login Page for CSIS 2450 Project
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Team US Login Page</title>
-    </head>
-    <body>
-        <div id="Header">
-            put in Team US logo info here
-            
-        </div>
+
         <div class="login">
+        <br><br>
             <form name="Login" action="CheckLogin.php" method="POST" enctype="application/x-www-form-urlencoded">
                 <table border="0" cellpadding="5">
                     <tbody>
@@ -36,8 +24,4 @@ Login Page for CSIS 2450 Project
             
             
         </div>
-        <?php
-        // put your code here
-        ?>
-    </body>
-</html>
+

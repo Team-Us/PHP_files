@@ -20,11 +20,10 @@ p {
     width: 1000px;
     float: left;
     margin: 0 auto;
-    padding: 10px;
 }
 
 #navigation {
-    height: 40px;
+    height: 80px;
     background: #FFCC33;
     border-radius: 10px;
     border: 1px solid #ebb81f;
@@ -44,7 +43,7 @@ p {
     border: 1px solid #ebebeb;
     margin: 5px;
     height: 330px;
-    padding: 10px;
+	overflow: scroll;
 }
 
 #leftcolumnwrap {
@@ -59,7 +58,6 @@ p {
     border-radius: 10px;
     border: 1px solid #1fb8eb;
     margin: 5px;
-    padding: 1px;
 }
 
 #footerwrap {
@@ -151,7 +149,7 @@ display:table;
     width: 100%;
     float: left;
 }
-cell{
+.cell{
     display:table-cell;
     width:33.3%;
     float: left;
@@ -163,7 +161,7 @@ cell{
     float: left;
 }
 
-buttonNext{
+.buttonNext{
     float:right;
     
 }

@@ -1,5 +1,6 @@
 <?php //this file is used to only store functions. This page is entirely unaccessable to users. No HTML here!
        // this function establishes a connection to the database, it displays messages if connection fails or if the database is unusable.
+	   error_reporting(E_ALL ^ (E_NOTICE | E_WARNING | E_DEPRECATED));
        function connectToDatabase()
        {
             
@@ -43,15 +44,21 @@
        {
            if(isset($_POST['userEntry']))
            {
-               $result=  strcmp($dbAnswer, $userEntry);
-               if($result===0)
+            
+               if($userEntry==$dbAnswer)
                {
-                    echo ("<br>Correct! The answer is ".$dbAnswer);
+                    echo ("<br>Correct! The answer is ".$dbAnswer.".");
                }
-               else if($result!==0) 
+               else if($userEntry!=$dbAnswer ) 
                {
-                    echo("<br> Wrong, ".$_POST['userEntry']." is incorrect!");
+                   $_POST['count']++; 
+                   echo("<br> Wrong, ".$_POST['userEntry']." is incorrect!");
                }
+               else if($_POST['count']>3)
+               {
+                   $_POST=0;
+                   echo("Tough luck champ. Retry this exercise after studying a little bit more about it, or ask for help.");
+               }    
            }
        }
        
@@ -86,7 +93,10 @@
                 echo ' checked="true"';
             }
         }
-            
+        
+       
+
+    
         function getPageInfo($eID)
         {
             $data=getPromptData($eID);
@@ -108,4 +118,52 @@
             }
             return $returned;
         }
+		function getUserName($user){
+			$uID='';
+			$dbConnection=connectToDatabase();
+			//get userinfo
+			$userTable = "users";
+			$DBQuery = "SELECT * FROM `$userTable` WHERE `UserName` = '".$user."'";
+	
+			$DBResult = mysql_query($DBQuery,$dbConnection);
+	
+			if (mysql_num_rows($DBResult) == 1){
+				$rows = mysql_fetch_array($DBResult);
+				$uID = $rows['Name'];
+			}
+				
+			return $uID;
+		}
+		function getInstructor($user){
+			$Instructor='';
+			$dbConnection=connectToDatabase();
+			//get userinfo
+			$userTable = "users";
+			$DBQuery = "SELECT * FROM `$userTable` WHERE `UserName` = '".$user."'";
+	
+			$DBResult = mysql_query($DBQuery,$dbConnection);
+	
+			if (mysql_num_rows($DBResult) == 1){
+				$rows = mysql_fetch_array($DBResult);
+				$Instructor = $rows['Instructor'];
+			}
+				
+			return $Instructor;
+		}
+ 		function getActiveDate($user){
+			$getActiveDate='';
+			$dbConnection=connectToDatabase();
+			//get userinfo
+			$userTable = "users";
+			$DBQuery = "SELECT * FROM `$userTable` WHERE `UserName` = '".$user."'";
+	
+			$DBResult = mysql_query($DBQuery,$dbConnection);
+	
+			if (mysql_num_rows($DBResult) == 1){
+				$rows = mysql_fetch_array($DBResult);
+				$getActiveDate = $rows['ActiveDate'];
+			}
+				
+			return $getActiveDate;
+		}        
 ?>
