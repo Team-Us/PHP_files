@@ -65,13 +65,13 @@ and open the template in the editor.
         </div>
             <form  method="post" action="<?php echo $previousPage,'?uID=',$_GET['uID'] ?>">
                 <div>
-                <button type="submit"  name="eID" value="<?php echo $previous,'?uID=',$_GET['uID']?>" >Previous</button>
+                <button type="submit"  name="eID" value="<?php echo $previous?>" >Previous</button>
                 </div>
             </form>
             
             <form  method="post" action="<?php echo $nextPage,'?uID=',$_GET['uID'] ?>">
                 <div>
-                <button type="submit"  name="eID" value="<?php echo $next,'?uID=',$_GET['uID']?>" >Next</button>
+                <button type="submit"  name="eID" value="<?php echo $next?>" >Next</button>
                 </div>
             </form>
 

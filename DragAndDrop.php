@@ -5,12 +5,11 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-		<head>
-		<meta charset="UTF-8">
-		<title>Drag And Drop</title>
-		
-		<link rel="stylesheet" href="./4691.css"/>
-		<?php 
+    <head>
+        <meta charset="UTF-8">
+                <title> Drag And Drop </title>
+                <link rel="stylesheet" href="./4691.css"/>
+                <?php 
                     include 'exerciseFunctions.php';
                     $exercise=$_POST["eID"];
                     $dbConnected=connectToDatabase();
@@ -27,12 +26,13 @@ and open the template in the editor.
                     $previous=$prompt['PreviousPrompt'];
                     $previousPage=getPageInfo($previous); 
                 ?>
-		<script>
+                <script>
 			// array of object dropped in the leftDiv
                         var leftArray= new Array();
                         //array of objects dropped in the rightDiv
                         var rightArray= new Array();
-                        
+                        var moveCount=0;
+                        var attemptCount=0;
                         function allowDrop(ev) 
                         {
 				ev.preventDefault();
@@ -42,6 +42,7 @@ and open the template in the editor.
 			function drag(ev) 
                         {
                               ev.dataTransfer.setData("text", ev.target.id);
+                              moveCount++;
 			}//end drag
 
 			function dropLeft(ev) 
@@ -99,6 +100,7 @@ and open the template in the editor.
 			}//end drop
                        function checkAnswer()
                        {
+                           attemptCount++;
                            var lcount=0;
                            var rcount=0;
                            var lAnswers=<?php echo json_encode($leftDiv);?>;
@@ -117,12 +119,16 @@ and open the template in the editor.
                            }
                            if(lcount>0||rcount>0)
                            { alert("Wrong");}
-                           else if(lcount===0&&rcount===0)
+                           else if(lcount===0&&rcount===0&&moveCount!==0&&attemptCount<=3)
                            {alert("correct");}
+                           else if(attemptCount>3)
+                           {
+                               alert("Come back to this question after studying more about this topic.");
+                           }
                          }//end checkAnswer()
-		</script>
-		</head>
-		<body>
+</script>
+</head>
+<body>
 <!--Kevin modification here  -->
 <div id="wrapper">
           <div id="navigationwrap">
@@ -193,21 +199,22 @@ and open the template in the editor.
                     </div>
                 </div>
                             <div class="row">
-					<div class="cell">
+					<div class="promptCell">
                                             <input  type="button" value="Submit"  onClick="checkAnswer()"/>
 					</div>
 				</div>
 				<div class="row">
 					<div class="buttonCell">
-					<form method="post" action="<?php echo $previousPage ?>">
+					<form method="post" action="<?php echo $previousPage,'?uID=',$_GET['uID']  ?>">
                                             <button type="submit"  name="eID" value="<?php echo $previous?>" >Previous</button>
                                         </form>
-					
 					</div>
-					<div class="buttonCell">
-					    <form method="post" action="<?php echo $nextPage ?>">
+                                    
+                                    <div class="buttonCell">
+					    <form method="post" action="<?php echo $nextPage,'?uID=',$_GET['uID']  ?>">
                                                 <button type="submit"  name="eID" value="<?php echo $next?>" >Next</button>
                                             </form>
+                                    </div>
 					</div>
 				</div>
 			</div>
@@ -220,9 +227,8 @@ and open the template in the editor.
           ?>
             </div>
   </div>
-        </div>
-<br>
-<br>
+        
+
 <!-- to here -->
 </body>
 </html>
