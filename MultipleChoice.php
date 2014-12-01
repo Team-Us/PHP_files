@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+multiple choice questions
 -->
 <html>
     <head>
@@ -22,6 +20,10 @@ and open the template in the editor.
         $nextPage=getPageInfo($next);
         $previous=$prompt['PreviousPrompt'];
         $previousPage=getPageInfo($previous); 
+        if(!isset($_POST['count']))
+        {
+            $_POST['count']=0;
+        }
         ?>
         <!-- form is created, and dynamically populated with the data retrieved from the database, and it posts to this same page-->
 
@@ -41,7 +43,7 @@ and open the template in the editor.
         <div id="contentwrap">
         <div id="content">
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]),'?uID=',$_GET['uID'];?>">
-            Multiple Choice:
+            <?php echo("".$prompt['Topic'])?> Multiple Choice:
             <br>
             <?php echo($prompt["Prompt"]);?>
             <br>

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+fill in the blank questions.
 -->
 <html>
 <head>
@@ -13,16 +11,16 @@ and open the template in the editor.
 <body>
 <?php
         include 'exerciseFunctions.php';
-        //Fields for testing only, the links to exercises need to be in a form, which posts the eID, to be called.
-        //There may also need to be a php page that checks the topic of a given exercise, which then posts the eID
-        //to the proper page.
         $exercise=$_POST["eID"]+0;
         $prompt=getPromptData($exercise);
         $next=$prompt['NextPrompt'];
         $nextPage=getPageInfo($next);
         $previous=$prompt['PreviousPrompt'];
         $previousPage=getPageInfo($previous); 
-        
+        if(!isset($_POST['count']))
+        {
+            $_POST['count']=0;
+        }
         ?>
 <div id="wrapper">
   <div id="navigationwrap">
@@ -37,7 +35,7 @@ and open the template in the editor.
   </div>
   <div id="contentwrap">
     <div id="content">
-      <p> Fill In The Blank:
+      <p><?php echo("".$prompt['Topic'])?> Fill In The Blank:
       <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]),'?uID=',$_GET['uID'];?>">
         <?php echo("".$prompt["Prompt"]."<br>Answer:");?> 
         <!--

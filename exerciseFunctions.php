@@ -56,7 +56,7 @@
                }
                else if($_POST['count']>3)
                {
-                   $_POST=0;
+                   $_POST['count']=0;
                    echo("Tough luck champ. Retry this exercise after studying a little bit more about it, or ask for help.");
                }    
            }

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+Code Entry questions
 -->
 <html>
 <head>
@@ -43,7 +41,7 @@ and open the template in the editor.
   </div>
   <div id="contentwrap">
     <div id="content">
-      <p> Code Entry:
+      <p><?php echo("".$prompt['Topic'])?> Code Entry:
       <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]),'?uID=',$_GET['uID'];?>">
         <?php echo("".$prompt["Prompt"]."<br>Answer:");?>
         <input type = "text" size = "50" name="userEntry" <?php if (isset($_POST['userEntry'])){echo('value="'.$_POST['userEntry'].'"');};?>  >
