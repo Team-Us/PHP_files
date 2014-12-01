@@ -31,26 +31,31 @@ p {
 }
 
 #contentwrap {
-    width: 740px;
-    height: 340px;
+    width: 720px;
+    height: 360px;
     float: left;
     margin: 5px;
+    
 }
 
 #content {
     background: #FFFFFF;
     border-radius: 10px;
     border: 1px solid #ebebeb;
-    margin: 5px;
-    height: 330px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 8px;
+    height: 350px;
+    padding:10px;
 	overflow: scroll;
 }
 
 #leftcolumnwrap {
-    width: 250px;
-    height: 330px;
+    width: 240px;
+    height: 360px;
     float: left;
-    margin: 5 px;
+    margin: 5px;
 }
 
 #leftcolumn {
@@ -58,21 +63,23 @@ p {
     border-radius: 10px;
     border: 1px solid #1fb8eb;
     margin: 5px;
+    padding: 1px;
+    height:360px;
 }
 
 #footerwrap {
     width: 1000px;
     float: left;
-    margin: 10 px;
+    margin: 10px;
     clear: both;
 }
 
 #footer {
     height: 40px;
     background: #33FF66;
-    border-radius: 100px;
+    border-radius: 75px;
     border: 1px solid #1feb52;
-    margin: 10px;
+    margin: 5px;
 }
 button.link
 {
@@ -83,16 +90,18 @@ button.link
     /*border is optional*/
      border-bottom:1px solid #444; 
      cursor: pointer;
+     text-indent: 2px;
 }
 .imageLocation
 {
 
 	float: left;
-	margin-top: 5px;
-	margin-left: 5px;
+	margin-top: 1px;
+	margin-left: 1px;
 	list-style-type: none;
 	text-align: center;
         width: 150px;
+        height: 240px;
         
 }
 .rightBox1
@@ -103,8 +112,8 @@ button.link
 	margin-top: 5px;
 
 	width:150px;
-	height:250px;
-	padding:10px;
+	height:230px;
+	padding:5px;
 	border:1px solid #aaaaaa;
 	text-align: center;
 }
@@ -116,17 +125,19 @@ button.link
 	float: left;
 
 	width:150px;
-	height:250px;
-	padding:10px;
+	height:230px;
+	padding:5px;
 	border:1px solid #aaaaaa;
 	text-align: center;
 }
 .button-container form,
-.button-container form div {
+.button-container form div 
+{
     display: inline;
 }
 
-.button-container button {
+.button-container button 
+{
     display: inline;
     vertical-align: middle;
 }
@@ -142,6 +153,7 @@ display:table;
 .row
 {
     display: table-row;
+    width:100%;
 }
 .promptCell
 {
@@ -157,12 +169,12 @@ display:table;
 .buttonCell
 {
     display:table-cell;
-    width:50%;
+    width:100%;
     float: left;
 }
 
 .buttonNext{
-    float:right;
+    float:left;
     
 }
 .instructions
